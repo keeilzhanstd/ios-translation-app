@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  translatorapp
+
+  Created by Bekzhan on 1/7/2021.
+  
+*/
+
+"translate-button" = "Перевести";
+"translate-history-button" = "История переводов";

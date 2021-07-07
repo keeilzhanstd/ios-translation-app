@@ -11,7 +11,7 @@ struct ContentView: View {
     
     @EnvironmentObject var translateVM: TranslateViewModel
     
-    @State var currentLocal: String = "Type in text"
+    @State var currentLocal: String = ""
     @State var currentLang: String = "UK_FLAG"
     @State var targetLang: String = "RU_FLAG"
     
@@ -90,7 +90,7 @@ struct ContentView: View {
                                             .foregroundColor(.primary)
                                             .background(Color(.systemBackground))
                                             .frame(width: 32, height: 32, alignment: .center)
-                                        Text("Translate")
+                                        Text("translate-button")
                                             .font(.title2)
                                             .foregroundColor(.primary)
                                             .fontWeight(.semibold)
@@ -108,7 +108,7 @@ struct ContentView: View {
                                     .frame(height: 100)
                                     .shadow(radius: 1)
                                     .overlay(
-                                        Text("Translations History")
+                                        Text("translate-history-button")
                                             .foregroundColor(.primary)
                                     )
                             })
@@ -155,5 +155,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.locale, .init(identifier: "en"))
+            .environmentObject(TranslateViewModel())
+            
     }
 }
